@@ -23,7 +23,10 @@
                 <tbody>
                     {% for item in products %}
                         <tr class="border-b border-gray-200">
-                            <td class="py-2">{{ item.product.name }}</td>
+                            <td class="py-2 flex items-center space-x-3">
+                                <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="w-12 h-12 object-cover rounded" />
+                                <span>{{ item.product.name }}</span>
+                            </td>
                             <td class="py-2">{{ item.quantity }}</td>
                             <td class="py-2">${{ item.subtotal }}</td>
                             <td class="py-2">
