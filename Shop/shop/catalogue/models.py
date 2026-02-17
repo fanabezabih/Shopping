@@ -26,7 +26,8 @@ class Product(models.Model):
     Subscription = models.OneToOneField(Subscription, null=True, on_delete=models.CASCADE)
     stock = models.PositiveIntegerField()
     Category = models.ForeignKey(Category, null=True, on_delete=models.PROTECT)
-    
+    image = models.ImageField(upload_to='product_images/', null=True, blank=True)
+
 
     def __str__(self):
         return f"{self.name} price {self.price}"
